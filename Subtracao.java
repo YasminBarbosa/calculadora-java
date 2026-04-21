@@ -5,6 +5,8 @@ public class Subtracao extends OperacoesMatematicas {
 
         subtrair = a - b;
 
+        System.out.println("O resultado da subtração é: " + subtrair);
+
         return subtrair;
     }
 }

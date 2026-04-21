@@ -4,6 +4,10 @@ public class Principal {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Soma calcularSoma = new Soma();
+        Subtracao calcularSubtracao = new Subtracao();
+        Multiplicacao calcularMultiplicacao = new Multiplicacao();
+        Divisao calcuDivisao = new Divisao();
+
         
         System.err.println("""
             -- BEM-VINDO -- 
@@ -13,32 +17,41 @@ public class Principal {
             2-Substração
             3-Multiplicação
             4-Divisão
+            5-Sair
         """);
         
         System.out.print("Insira sua escolha: ");
         int escolha = input.nextInt();
 
 
+        System.out.print("Valor A: ");
+        double a = input.nextDouble();
+
+        System.out.print("Valor B: ");
+        double b = input.nextDouble();
         if (escolha == 1){
-            System.out.print("Valor A: ");
-            double a = input.nextDouble();
-
-            System.out.print("Valor B: ");
-            double b = input.nextDouble();
-
             calcularSoma.calcular(a, b);
-
         }
         else if (escolha == 2){
-            //substracao
+            calcularSubtracao.calcular(a, b);
         }
         else if(escolha == 3){
-            //multiplicacao
+            calcularMultiplicacao.calcular(a, b);
+        }
+        else if (escolha == 4) {
+            try{
+                calcuDivisao.calcular(a, b);
+            }
+            catch (Exception DivisaoPorZeroException) {
+                System.err.println("ERRO: " + DivisaoPorZeroException.getMessage());
+            }
+            
         }
         else{
-            //divisao
+            System.out.print("Encerrando sistema!");
         }
 
+        
         input.close();
     }
 }
