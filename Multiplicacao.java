@@ -5,7 +5,7 @@ public class Multiplicacao extends OperacoesMatematicas{
 
         multiplicar = a * b;
 
-        System.out.println("O resultado da multiplicação é: " + multiplicar);
+        System.out.println("Resultado: " + a + " * " + b + " = " + multiplicar);
 
         return multiplicar;
     }

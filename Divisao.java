@@ -12,7 +12,7 @@ public class Divisao extends OperacoesMatematicas {
 
             dividir = a / b;
 
-            System.out.println("O resultado da divisão é: " + dividir);
+            System.out.println("Resultado: " + a + " / " + b + " = " + dividir);
 
             return dividir;
         }

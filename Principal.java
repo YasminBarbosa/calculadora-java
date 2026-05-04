@@ -1,4 +1,4 @@
-import java.util.Scanner;
+    import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
@@ -8,8 +8,7 @@ public class Principal {
         Multiplicacao calcularMultiplicacao = new Multiplicacao();
         Divisao calcuDivisao = new Divisao();
 
-        
-        System.err.println("""
+        String message = """
             -- BEM-VINDO -- 
             CALCULADORA SIMPLES
             Escolha uma operação:
@@ -18,40 +17,42 @@ public class Principal {
             3-Multiplicação
             4-Divisão
             5-Sair
-        """);
-        
-        System.out.print("Insira sua escolha: ");
-        int escolha = input.nextInt();
+        """;
+        String messageChoice = "Insira sua escolha: ";
 
+        System.out.println(message);
+        System.out.print(messageChoice);
 
-        System.out.print("Valor A: ");
+        int choice = input.nextInt();
+
+        System.out.print("A: ");
         double a = input.nextDouble();
 
-        System.out.print("Valor B: ");
+        System.out.print("B: ");
         double b = input.nextDouble();
-        if (escolha == 1){
-            calcularSoma.calcular(a, b);
-        }
-        else if (escolha == 2){
-            calcularSubtracao.calcular(a, b);
-        }
-        else if(escolha == 3){
-            calcularMultiplicacao.calcular(a, b);
-        }
-        else if (escolha == 4) {
-            try{
-                calcuDivisao.calcular(a, b);
-            }
-            catch (Exception DivisaoPorZeroException) {
-                System.err.println("ERRO: " + DivisaoPorZeroException.getMessage());
-            }
-            
-        }
-        else{
-            System.out.print("Encerrando sistema!");
-        }
 
-        
+        switch(choice){
+            case 1:
+                calcularSoma.calcular(a, b);
+                break;
+            case 2:
+                calcularSubtracao.calcular(a, b);
+                break;
+            case 3:
+                calcularMultiplicacao.calcular(a, b);
+                break;
+            case 4:
+                try{
+                    calcuDivisao.calcular(a, b);
+                    break;
+                }
+                catch(Exception DivisaoPorZeroException){
+                    System.err.println("ERRO: " + DivisaoPorZeroException.getMessage());
+                }
+            case 5:
+                System.out.println("Encerrando sistema!");
+                break;
+        }
         input.close();
     }
 }

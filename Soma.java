@@ -5,7 +5,7 @@ public class Soma extends OperacoesMatematicas {
 
         soma = a + b;
 
-        System.out.println("O resultado da soma é: " + soma);
+        System.out.println("Resultado: " + a + " + " + b + " = " + soma);
 
         return soma;
     }
